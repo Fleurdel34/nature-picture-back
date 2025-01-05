@@ -22,6 +22,7 @@ public class FormController {
         this.formService = formService;
     }
 
+    @CrossOrigin(origins = "*")
     @ResponseStatus(value= HttpStatus.CREATED)
     @PostMapping
     public String create(@ModelAttribute Form form,@RequestParam("imageFile") MultipartFile imageFile) throws IOException, IOException{
