@@ -1,28 +1,24 @@
 package com.naturepictureback.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
+import lombok.Data;
 
-@Getter
-@Setter
+
+@Data
 @Entity
-@Table(name="form")
+@Table(name= "form")
 public class Form {
 
-    @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String title;
-    @Column(
-            nullable = false
-    )
+
+    @Column(nullable = false)
     private String description;
 
-    @Lob
-    @Column(columnDefinition = "MEDIUMBLOB")
+    @Column(nullable = false)
     private String filename;
 
     public Form() {
@@ -33,6 +29,4 @@ public class Form {
         this.description = description;
         this.filename = filename;
     }
-
-
 }

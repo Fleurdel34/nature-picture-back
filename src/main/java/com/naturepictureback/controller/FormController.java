@@ -5,9 +5,7 @@ import com.naturepictureback.models.Form;
 import com.naturepictureback.service.FormService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.List;
 
 
@@ -25,11 +23,12 @@ public class FormController {
     @CrossOrigin(origins = "*")
     @ResponseStatus(value= HttpStatus.CREATED)
     @PostMapping
-    public String create(@ModelAttribute Form form,@RequestParam("imageFile") MultipartFile imageFile) throws IOException, IOException{
-        this.formService.create(form, imageFile);
-        return "file update";
+    public void createForm(@RequestBody Form form) {
+        this.formService.createForm(form);
+
     }
 
+    @CrossOrigin(origins ="*")
     @GetMapping
     public List<Form> read(){
         return this.formService.read();
