@@ -28,7 +28,7 @@ public class FormController {
 
     @CrossOrigin(origins ="*")
     @GetMapping("/{title}")
-    public List<Form> readByTitle(String title){
+    public Form readByTitle(@PathVariable String title){
         return this.formService.readByTitle(title);
     }
 }
