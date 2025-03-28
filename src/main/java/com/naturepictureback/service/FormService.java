@@ -21,7 +21,7 @@ public class FormService {
 
     }
 
-    public List<Form> read(){
-        return this.formRepository.findAll();
+    public List<Form> readByTitle(String title){
+        return this.formRepository.findByTitle(title);
     }
 }

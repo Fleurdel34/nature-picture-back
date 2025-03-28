@@ -1,8 +1,8 @@
 package com.naturepictureback.models;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.util.Date;
 
 
@@ -21,7 +21,7 @@ public class Form {
     private String description;
 
     @Column(nullable = false)
-    private String filename;
+    private String imageUrl;
 
     @Column(nullable = false)
     private Date date;
@@ -30,10 +30,10 @@ public class Form {
     }
 
 
-    public Form(String title, String description, String filename, Date date) {
+    public Form(String title, String description, String imageUrl, Date date) {
         this.title = title;
         this.description = description;
-        this.filename = filename;
+        this.imageUrl = imageUrl;
         this.date = date;
     }
 }
