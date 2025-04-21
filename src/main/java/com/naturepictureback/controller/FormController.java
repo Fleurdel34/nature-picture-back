@@ -5,6 +5,7 @@ import com.naturepictureback.models.Form;
 import com.naturepictureback.service.FormService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 
@@ -28,7 +29,7 @@ public class FormController {
 
     @CrossOrigin(origins ="*")
     @GetMapping("/{title}")
-    public Form readByTitle(@PathVariable String title){
+    public List<Form> readByTitle(@PathVariable String title){
         return this.formService.readByTitle(title);
     }
 }
