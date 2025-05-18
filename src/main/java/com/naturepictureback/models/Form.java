@@ -20,7 +20,8 @@ public class Form {
     @Column(nullable = false)
     private String description;
 
-    @Column(nullable = false)
+    @Lob
+    @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String imageUrl;
 
     @Column(nullable = false)
