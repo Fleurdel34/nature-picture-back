@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 public class FormService {
 
@@ -22,6 +21,8 @@ public class FormService {
     }
 
     public List<Form> readByTitle(String title){
-        return this.formRepository.findByTitle(title);
+        return this.formRepository.findAllByTitle(title);
     }
+
+
 }
