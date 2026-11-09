@@ -7,6 +7,7 @@ import lombok.Data;
 
 import java.util.Date;
 
+
 @Data
 @Entity
 @Table(name= "user")
@@ -23,7 +24,7 @@ public class User {
     private String firstName;
 
     @Column(nullable = false)
-    private Date dateOfBirth;
+    private Date birthdate;
 
     @Email
     @Column(nullable = false)
